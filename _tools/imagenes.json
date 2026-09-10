@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "origen": "foto-06.jpg",
+    "original": "640x480",
+    "anchos": [
+      640,
+      480,
+      360
+    ],
+    "alto": 480
+  },
+  "girardota": {
+    "origen": "img-002-002.png",
+    "original": "546x410",
+    "anchos": [
+      546,
+      400
+    ],
+    "alto": 410
+  },
+  "encenillos": {
+    "origen": "img-002-003.png",
+    "original": "458x344",
+    "anchos": [
+      458,
+      400
+    ],
+    "alto": 344
+  },
+  "taller-01": {
+    "origen": "banner-01.jpg",
+    "original": "960x720",
+    "anchos": [
+      960,
+      640,
+      420
+    ],
+    "alto": 720
+  },
+  "taller-02": {
+    "origen": "banner-02.jpg",
+    "original": "960x720",
+    "anchos": [
+      960,
+      640,
+      420
+    ],
+    "alto": 720
+  },
+  "grupo-01": {
+    "origen": "foto-01.jpg",
+    "original": "640x480",
+    "anchos": [
+      640,
+      420
+    ],
+    "alto": 480
+  },
+  "aula-01": {
+    "origen": "foto-09.jpg",
+    "original": "640x480",
+    "anchos": [
+      640,
+      420
+    ],
+    "alto": 480
+  },
+  "grupo-02": {
+    "origen": "foto-10.jpg",
+    "original": "640x480",
+    "anchos": [
+      640,
+      420
+    ],
+    "alto": 480
+  },
+  "entrega-01": {
+    "origen": "foto-03.jpg",
+    "original": "640x480",
+    "anchos": [
+      640,
+      420
+    ],
+    "alto": 480
+  },
+  "entrega-02": {
+    "origen": "foto-12.jpg",
+    "original": "640x480",
+    "anchos": [
+      640,
+      420
+    ],
+    "alto": 480
+  },
+  "certificado": {
+    "origen": "img-003-004.png",
+    "original": "640x895",
+    "anchos": [
+      640,
+      480
+    ],
+    "alto": 895
+  }
+}

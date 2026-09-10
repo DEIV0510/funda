@@ -1,0 +1,15 @@
+{
+  "name": "FUNDASPED · Fundación Educativa Asesorías Pedagógicas",
+  "short_name": "FUNDASPED",
+  "description": "Programa de Técnicas de Lectura Rápida, Comprensión y Retención para instituciones educativas.",
+  "lang": "es-CO",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0e1b33",
+  "theme_color": "#0e1b33",
+  "icons": [
+    { "src": "assets/img/favicon-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "assets/img/favicon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FUNDASPED | Fundación Educativa Asesorías Pedagógicas</title>
+<meta name="description" content="Fundación Educativa Asesorías Pedagógicas. Programa de Técnicas de Lectura Rápida, Comprensión y Retención para fortalecer la competencia lectora en instituciones educativas.">
+<meta name="author" content="FUNDASPED · Fundación Educativa Asesorías Pedagógicas">
+<meta name="theme-color" content="#0e1b33">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph. Al publicar en el dominio definitivo conviene cambiar
+     og:image y og:url por rutas absolutas. -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="FUNDASPED">
+<meta property="og:title" content="FUNDASPED | Fundación Educativa Asesorías Pedagógicas">
+<meta property="og:description" content="30 años acompañando la calidad educativa. Programa de Técnicas de Lectura Rápida, Comprensión y Retención para instituciones educativas de Antioquia.">
+<meta property="og:image" content="assets/img/og-fundasped.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/favicon-180.png">
+<link rel="manifest" href="site.webmanifest">
+
+<link rel="preload" as="image" href="assets/img/hero-640.webp" imagesrcset="assets/img/hero-360.webp 360w, assets/img/hero-480.webp 480w, assets/img/hero-640.webp 640w" imagesizes="(max-width: 900px) 92vw, 520px">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/newsreader-latin.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<style>
+  /* Crítico: la pantalla de carga se pinta antes de la hoja de estilos. */
+  #loader{position:fixed;inset:0;z-index:9999;background:#0e1b33;display:grid;place-content:center;justify-items:center;gap:1.15rem;text-align:center;padding:2rem}
+  #loader[hidden]{display:none}
+</style>
+<script>
+  /* Red de seguridad: si el JS principal no llega a cargar, a los 2,5 s se
+     retira la pantalla de carga y se muestra todo el contenido. */
+  (function(d){d.className+=" js";setTimeout(function(){d.className+=" fallback"},2500);})(document.documentElement);
+</script>
+</head>
+<body>
+
+<!-- ============================ PANTALLA DE CARGA =========================== -->
+<div id="loader" role="status" aria-live="polite" aria-label="Cargando FUNDASPED">
+  <img src="assets/img/logo-navy-144.webp" width="72" height="65" alt="" class="loader-mark">
+  <div>
+    <p class="loader-name">FUNDASPED</p>
+    <p class="loader-sub">Fundación Educativa Asesorías Pedagógicas</p>
+  </div>
+  <div class="loader-bar"><span></span></div>
+</div>
+
+<a class="skip" href="#contenido">Ir al contenido</a>
+
+<!-- ================================= HEADER ================================ -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#inicio" aria-label="FUNDASPED, inicio">
+      <img src="assets/img/logo-navy-72.webp" srcset="assets/img/logo-navy-72.webp 72w, assets/img/logo-navy-144.webp 144w" sizes="38px" width="38" height="34" alt="Logotipo de FUNDASPED" decoding="async">
+      <span class="brand-txt">
+        <span class="brand-name">FUNDASPED</span>
+        <span class="brand-sub">Fundación Educativa Asesorías Pedagógicas</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#fundasped">FUNDASPED</a></li>
+        <li><a href="#programa">Programa</a></li>
+        <li><a href="#propuestas">Propuestas</a></li>
+        <li class="nav-opt"><a href="#beneficios">Beneficios</a></li>
+        <li class="nav-opt"><a href="#certificacion">Certificación</a></li>
+        <li><a href="#donar">Donar</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <div class="nav-foot">
+        <a class="btn btn-gold" href="#contacto">Solicitar reunión</a>
+        <a class="nav-wa" href="https://wa.me/573207584383?text=Hola%20FUNDASPED%2C%20estoy%20interesado%20en%20conocer%20el%20programa%20de%20T%C3%A9cnicas%20de%20Lectura%20R%C3%A1pida%2C%20Comprensi%C3%B3n%20y%20Retenci%C3%B3n." target="_blank" rel="noopener">WhatsApp 320 758 4383</a>
+      </div>
+    </nav>
+
+    <div class="hdr-actions">
+      <a class="btn btn-gold btn-sm hdr-cta" href="#contacto">Solicitar reunión</a>
+      <a class="hdr-wa" href="https://wa.me/573207584383?text=Hola%20FUNDASPED%2C%20estoy%20interesado%20en%20conocer%20el%20programa%20de%20T%C3%A9cnicas%20de%20Lectura%20R%C3%A1pida%2C%20Comprensi%C3%B3n%20y%20Retenci%C3%B3n." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a FUNDASPED">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2A9.9 9.9 0 0 0 2.1 11.9c0 1.75.46 3.46 1.34 4.97L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01a9.9 9.9 0 0 0 9.94-9.9A9.9 9.9 0 0 0 12.04 2Zm5.8 14.06c-.24.68-1.42 1.31-1.96 1.36-.5.05-.98.23-3.3-.69-2.78-1.1-4.54-3.94-4.68-4.13-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.28.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.23.55.78 1.9.85 2.04.07.14.11.3.02.48-.09.19-.14.3-.27.47-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.28.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.07.11.07.65-.17 1.33Z"/></svg>
+      </a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ================================== HERO ================================= -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow eyebrow-gold">Entidad sin ánimo de lucro <span class="dot">·</span> Desde 1994</p>
+      <h1 class="hero-title">Formamos <span class="mark">lectores expertos</span>.</h1>
+      <p class="hero-sub">Programa de Técnicas de Lectura Rápida, Comprensión y Retención.</p>
+      <p class="hero-note"><span class="rule-mini" aria-hidden="true"></span>30 años acompañando la calidad educativa de los municipios de Antioquia.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#contacto">Solicitar reunión</a>
+        <a class="btn btn-ghost" href="#programa">Conocer el programa</a>
+      </div>
+      <a class="hero-wa" href="https://wa.me/573207584383?text=Hola%20FUNDASPED%2C%20estoy%20interesado%20en%20conocer%20el%20programa%20de%20T%C3%A9cnicas%20de%20Lectura%20R%C3%A1pida%2C%20Comprensi%C3%B3n%20y%20Retenci%C3%B3n." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2A9.9 9.9 0 0 0 2.1 11.9c0 1.75.46 3.46 1.34 4.97L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01a9.9 9.9 0 0 0 9.94-9.9A9.9 9.9 0 0 0 12.04 2Zm5.8 14.06c-.24.68-1.42 1.31-1.96 1.36-.5.05-.98.23-3.3-.69-2.78-1.1-4.54-3.94-4.68-4.13-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.28.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.23.55.78 1.9.85 2.04.07.14.11.3.02.48-.09.19-.14.3-.27.47-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.28.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.07.11.07.65-.17 1.33Z"/></svg>
+        <span>Hablar por WhatsApp <b>320 758 4383</b></span>
+      </a>
+    </div>
+
+    <figure class="hero-plate">
+      <img src="assets/img/hero-640.webp"
+           srcset="assets/img/hero-360.webp 360w, assets/img/hero-480.webp 480w, assets/img/hero-640.webp 640w"
+           sizes="(max-width: 900px) 92vw, 520px"
+           width="640" height="480" fetchpriority="high" decoding="async"
+           alt="Estudiantes de secundaria atentos durante una sesión del programa de técnicas de lectura rápida.">
+      <figcaption>Sesión del programa en jornada complementaria</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap figures" id="cifras">
+    <div class="fig reveal"><p class="fig-n" data-count="30">30</p><p class="fig-l">años de trayectoria</p></div>
+    <div class="fig reveal" style="--d:.08s"><p class="fig-n" data-count="20">20</p><p class="fig-l">técnicas de lectura</p></div>
+    <div class="fig reveal" style="--d:.16s"><p class="fig-n" data-count="3">3</p><p class="fig-l">módulos de formación</p></div>
+    <div class="fig reveal" style="--d:.24s"><p class="fig-n" data-count="15" data-suffix="h">15h</p><p class="fig-l">de duración total</p></div>
+  </div>
+</section>
+
+<!-- ================================= EL RETO =============================== -->
+<section class="sec sec-light reto" id="reto">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><span class="folio">01</span> El reto</p>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+
+    <div class="reto-grid">
+      <h2 class="sec-title reveal">La comprensión lectora sigue siendo uno de los grandes retos educativos.</h2>
+
+      <div class="reto-side reveal" style="--d:.1s">
+        <p>Es una de las principales dificultades detectadas en las pruebas de Estado. FUNDASPED trabaja directamente sobre ella: no para leer más palabras por minuto, sino para formar lectores críticos y autónomos.</p>
+        <p class="reto-quote">«No es lo mismo leer por distracción que leer para un proceso educativo.»</p>
+      </div>
+    </div>
+
+    <div class="grades reveal" style="--d:.16s">
+      <p class="grades-lbl">Diagnosticamos competencia lectora en</p>
+      <ul class="grades-list">
+        <li><span>3</span>º</li>
+        <li><span>5</span>º</li>
+        <li><span>9</span>º</li>
+        <li><span>11</span>º</li>
+      </ul>
+    </div>
+
+    <figure class="reto-fig reveal" style="--d:.2s">
+      <img src="assets/img/taller-02-960.webp"
+           srcset="assets/img/taller-02-420.webp 420w, assets/img/taller-02-640.webp 640w, assets/img/taller-02-960.webp 960w"
+           sizes="(max-width: 900px) 92vw, 1160px"
+           width="960" height="720" loading="lazy" decoding="async"
+           alt="Estudiantes trabajando en mesas durante una jornada de trabajo del programa.">
+    </figure>
+  </div>
+</section>
+
+<!-- =============================== QUIÉNES SOMOS =========================== -->
+<section class="sec sec-light quienes" id="fundasped">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><span class="folio">02</span> Quiénes somos</p>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+
+    <div class="quienes-grid">
+      <div class="reveal">
+        <h2 class="sec-title">FUNDASPED</h2>
+        <p class="sec-lead">Fundación Educativa Asesorías Pedagógicas. Entidad sin ánimo de lucro.</p>
+      </div>
+      <div class="quienes-body reveal" style="--d:.1s">
+        <p class="dropcap">Nacimos en 1994 para acompañar a los padres de familia en el proceso educativo de sus hijos, a través de las escuelas de padres. Ese acompañamiento se extendió con el tiempo a instituciones educativas de distintos municipios del departamento.</p>
+        <p>Hoy seguimos trabajando junto a rectores y secretarías de educación en el mejoramiento de la calidad, esta vez a través de un programa que ataca una de las dificultades detectadas en Saber 11, Saber y Saber Pro: la comprensión lectora.</p>
+      </div>
+    </div>
+
+    <ol class="tl" aria-label="Trayectoria de FUNDASPED">
+      <li class="tl-i reveal">
+        <p class="tl-y">1994</p>
+        <h3 class="tl-t">Origen</h3>
+        <p class="tl-d">Nace la Fundación Educativa Asesorías Pedagógicas.</p>
+      </li>
+      <li class="tl-i reveal" style="--d:.08s">
+        <p class="tl-y" data-empty aria-hidden="true">—</p>
+        <h3 class="tl-t">Acompañamiento a familias</h3>
+        <p class="tl-d">Escuelas de padres para apoyar el proceso educativo de los hijos.</p>
+      </li>
+      <li class="tl-i reveal" style="--d:.16s">
+        <p class="tl-y" data-empty aria-hidden="true">—</p>
+        <h3 class="tl-t">Instituciones educativas</h3>
+        <p class="tl-d">El trabajo se extiende a varios municipios del departamento.</p>
+      </li>
+      <li class="tl-i reveal" style="--d:.24s">
+        <p class="tl-y" data-empty aria-hidden="true">—</p>
+        <h3 class="tl-t">Competencia lectora</h3>
+        <p class="tl-d">Programa de Técnicas de Lectura Rápida, Comprensión y Retención.</p>
+      </li>
+      <li class="tl-i reveal" style="--d:.32s">
+        <p class="tl-y">Hoy</p>
+        <h3 class="tl-t">30 años después</h3>
+        <p class="tl-d">Trabajo conjunto con rectores y secretarías de educación.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================================ EL PROGRAMA ============================ -->
+<section class="sec sec-dark programa" id="programa">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-gold"><span class="folio">03</span> El programa</p>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+
+    <div class="prog-grid">
+      <div class="reveal">
+        <h2 class="sec-title">Técnicas que transforman la forma de leer.</h2>
+      </div>
+      <div class="prog-intro reveal" style="--d:.1s">
+        <p>Un conjunto de herramientas que desarrollan la capacidad visual y mental de lectura, para ganar tiempo y mejorar la expresión oral y escrita.</p>
+        <p>El estudiante aprende a elegir la técnica adecuada según el objetivo de cada lectura. Se ha aplicado en ciencias sociales, matemáticas e idiomas.</p>
+      </div>
+    </div>
+
+    <div class="prog-meta reveal">
+      <div><p class="pm-n">20</p><p class="pm-l">técnicas</p></div>
+      <div><p class="pm-n">3</p><p class="pm-l">módulos</p></div>
+      <div><p class="pm-n">15 h</p><p class="pm-l">duración total</p></div>
+      <div><p class="pm-n">1,5 h</p><p class="pm-l">por sesión semanal</p></div>
+      <div><p class="pm-n">Jornada</p><p class="pm-l">complementaria</p></div>
+    </div>
+
+    <div class="mods" id="modulos">
+      <article class="mod reveal">
+        <h3>
+          <button type="button" class="mod-h" aria-expanded="true" aria-controls="mod-1">
+            <span class="mod-n">01</span>
+            <span class="mod-t">Percepción y lectura veloz</span>
+            <span class="mod-ico" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="mod-p" id="mod-1">
+          <div class="mod-inner">
+            <ul class="mod-list">
+              <li>Percepción visual</li>
+              <li>Amplitud del foco visual</li>
+              <li>Prelectura</li>
+              <li>Identificación de regresiones</li>
+              <li>Flexibilidad lectora</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="mod reveal" style="--d:.08s">
+        <h3>
+          <button type="button" class="mod-h" aria-expanded="false" aria-controls="mod-2">
+            <span class="mod-n">02</span>
+            <span class="mod-t">Comprensión</span>
+            <span class="mod-ico" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="mod-p" id="mod-2">
+          <div class="mod-inner">
+            <ul class="mod-list">
+              <li>Concentración</li>
+              <li>Técnica de párrafo</li>
+              <li>Desarrollo del pensamiento</li>
+              <li>Síntesis</li>
+              <li>Estrategia</li>
+              <li>Aprendizaje colectivo</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="mod reveal" style="--d:.16s">
+        <h3>
+          <button type="button" class="mod-h" aria-expanded="false" aria-controls="mod-3">
+            <span class="mod-n">03</span>
+            <span class="mod-t">Preparación de exámenes</span>
+            <span class="mod-ico" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="mod-p" id="mod-3">
+          <div class="mod-inner">
+            <ul class="mod-list">
+              <li>Métodos de estudio</li>
+              <li>Lectura de prensa y revistas</li>
+              <li>Presentación de evaluaciones</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="prog-foot reveal">Las 20 técnicas se distribuyen entre los tres módulos. Al finalizar, cada participante recibe su certificado como <strong>Lector Experto en Técnicas de Lectura Rápida</strong>.</p>
+  </div>
+</section>
+
+<!-- ================================ BENEFICIOS ============================= -->
+<section class="sec sec-light beneficios" id="beneficios">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><span class="folio">04</span> Beneficios</p>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+    <h2 class="sec-title reveal">Lo que cambia para sus estudiantes y docentes.</h2>
+
+    <ul class="bens">
+      <li class="ben reveal">
+        <span class="ben-n">01</span>
+        <svg class="ben-i" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4 27h24M7 27V17m6 10V11m6 16V14m6 13V6"/></svg>
+        <h3>Mejor desempeño académico</h3>
+        <p>Identifican y corrigen a tiempo sus dificultades de comprensión lectora.</p>
+      </li>
+      <li class="ben reveal" style="--d:.06s">
+        <span class="ben-n">02</span>
+        <svg class="ben-i" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 4l10 4v8c0 6-4.4 10.4-10 12-5.6-1.6-10-6-10-12V8l10-4Z"/><path d="M11.5 15.5l3.2 3.2 6-6.2"/></svg>
+        <h3>Preparación para pruebas de Estado</h3>
+        <p>Mejor desempeño en Saber 11, Saber y Saber Pro, y más opciones de beca universitaria.</p>
+      </li>
+      <li class="ben reveal" style="--d:.12s">
+        <span class="ben-n">03</span>
+        <svg class="ben-i" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 4h14M9 28h14M11 4v5.2c0 3.3 5 4.3 5 6.8 0 2.5-5 3.5-5 6.8V28M21 4v5.2c0 3.3-5 4.3-5 6.8 0 2.5 5 3.5 5 6.8V28"/></svg>
+        <h3>Aprovechamiento del tiempo</h3>
+        <p>Ganan tiempo de estudio y mejoran su expresión oral y escrita.</p>
+      </li>
+      <li class="ben reveal" style="--d:.18s">
+        <span class="ben-n">04</span>
+        <svg class="ben-i" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4 9.5 16 5l12 4.5L16 14 4 9.5Z"/><path d="M4 16l12 4.5L28 16M4 22.5 16 27l12-4.5"/></svg>
+        <h3>Aplicable a todas las áreas</h3>
+        <p>Ciencias sociales, matemáticas e idiomas: la técnica se ajusta al objetivo de cada lectura.</p>
+      </li>
+      <li class="ben reveal" style="--d:.24s">
+        <span class="ben-n">05</span>
+        <svg class="ben-i" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="13" r="8"/><path d="M11.5 20 9 29l7-3.4L23 29l-2.5-9"/></svg>
+        <h3>Certificación de Lector Experto</h3>
+        <p>Un respaldo con proyección laboral, útil en procesos de selección.</p>
+      </li>
+      <li class="ben reveal" style="--d:.3s">
+        <span class="ben-n">06</span>
+        <svg class="ben-i" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4 7h9.5c1.4 0 2.5 1.1 2.5 2.5V27c0-1.4-1.1-2.5-2.5-2.5H4V7Z"/><path d="M28 7h-9.5c-1.4 0-2.5 1.1-2.5 2.5V27c0-1.4 1.1-2.5 2.5-2.5H28V7Z"/></svg>
+        <h3>Capacitación gratuita a docentes</h3>
+        <p>Sin costo para la institución, para los docentes que lo deseen.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================== GALERÍA ============================== -->
+<section class="sec sec-band galeria" id="galeria">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><span class="folio">05</span> Momentos del programa</p>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+    <h2 class="sec-title reveal">Así vivimos las técnicas de lectura en las instituciones educativas.</h2>
+
+    <div class="gal" id="gal">
+      <figure class="gal-i gal-lg reveal">
+        <button type="button" class="gal-btn" data-full="assets/img/girardota-546.webp" data-cap="Biblioteca Municipal de Girardota">
+          <img src="assets/img/girardota-546.webp" srcset="assets/img/girardota-400.webp 400w, assets/img/girardota-546.webp 546w" sizes="(max-width: 700px) 92vw, 46vw" width="546" height="410" loading="lazy" decoding="async" alt="Grupo de estudiantes con sus certificados en la Biblioteca Municipal de Girardota.">
+          <span class="gal-cap">Biblioteca Municipal de Girardota</span>
+        </button>
+      </figure>
+      <figure class="gal-i reveal" style="--d:.06s">
+        <button type="button" class="gal-btn" data-full="assets/img/encenillos-458.webp" data-cap="Estudiantes de la vereda Encenillos">
+          <img src="assets/img/encenillos-458.webp" srcset="assets/img/encenillos-400.webp 400w, assets/img/encenillos-458.webp 458w" sizes="(max-width: 700px) 92vw, 30vw" width="458" height="344" loading="lazy" decoding="async" alt="Estudiantes de la vereda Encenillos muestran sus certificados en la entrada de su institución.">
+          <span class="gal-cap">Estudiantes de la vereda Encenillos</span>
+        </button>
+      </figure>
+      <figure class="gal-i reveal" style="--d:.12s">
+        <button type="button" class="gal-btn" data-full="assets/img/grupo-01-640.webp" data-cap="Entrega de certificados del programa">
+          <img src="assets/img/grupo-01-640.webp" srcset="assets/img/grupo-01-420.webp 420w, assets/img/grupo-01-640.webp 640w" sizes="(max-width: 700px) 92vw, 30vw" width="640" height="480" loading="lazy" decoding="async" alt="Grupo numeroso de estudiantes sentados sostiene los certificados del programa.">
+          <span class="gal-cap">Entrega de certificados</span>
+        </button>
+      </figure>
+      <figure class="gal-i reveal" style="--d:.06s">
+        <button type="button" class="gal-btn" data-full="assets/img/aula-01-640.webp" data-cap="Sesión de trabajo con estudiantes">
+          <img src="assets/img/aula-01-640.webp" srcset="assets/img/aula-01-420.webp 420w, assets/img/aula-01-640.webp 640w" sizes="(max-width: 700px) 92vw, 30vw" width="640" height="480" loading="lazy" decoding="async" alt="Estudiantes en un auditorio durante una sesión del programa.">
+          <span class="gal-cap">Sesión de trabajo</span>
+        </button>
+      </figure>
+      <figure class="gal-i gal-lg reveal" style="--d:.12s">
+        <button type="button" class="gal-btn" data-full="assets/img/taller-01-960.webp" data-cap="Jornada complementaria en la institución">
+          <img src="assets/img/taller-01-640.webp" srcset="assets/img/taller-01-420.webp 420w, assets/img/taller-01-640.webp 640w, assets/img/taller-01-960.webp 960w" sizes="(max-width: 700px) 92vw, 46vw" width="960" height="720" loading="lazy" decoding="async" alt="Estudiantes trabajando en mesas durante una jornada complementaria.">
+          <span class="gal-cap">Jornada complementaria</span>
+        </button>
+      </figure>
+      <figure class="gal-i reveal" style="--d:.06s">
+        <button type="button" class="gal-btn" data-full="assets/img/entrega-01-640.webp" data-cap="Certificado de Lector Experto">
+          <img src="assets/img/entrega-01-640.webp" srcset="assets/img/entrega-01-420.webp 420w, assets/img/entrega-01-640.webp 640w" sizes="(max-width: 700px) 92vw, 30vw" width="640" height="480" loading="lazy" decoding="async" alt="Entrega individual del certificado de participación en el programa.">
+          <span class="gal-cap">Certificado de Lector Experto</span>
+        </button>
+      </figure>
+      <figure class="gal-i reveal" style="--d:.12s">
+        <button type="button" class="gal-btn" data-full="assets/img/grupo-02-640.webp" data-cap="Grupo certificado de una institución educativa">
+          <img src="assets/img/grupo-02-640.webp" srcset="assets/img/grupo-02-420.webp 420w, assets/img/grupo-02-640.webp 640w" sizes="(max-width: 700px) 92vw, 30vw" width="640" height="480" loading="lazy" decoding="async" alt="Grupo completo de estudiantes certificados junto a sus docentes.">
+          <span class="gal-cap">Grupo certificado</span>
+        </button>
+      </figure>
+      <figure class="gal-i reveal" style="--d:.18s">
+        <button type="button" class="gal-btn" data-full="assets/img/entrega-02-640.webp" data-cap="Cierre del curso de lectura rápida">
+          <img src="assets/img/entrega-02-640.webp" srcset="assets/img/entrega-02-420.webp 420w, assets/img/entrega-02-640.webp 640w" sizes="(max-width: 700px) 92vw, 30vw" width="640" height="480" loading="lazy" decoding="async" alt="Estudiante recibe su certificado al cierre del curso de lectura rápida.">
+          <span class="gal-cap">Cierre del curso</span>
+        </button>
+      </figure>
+    </div>
+
+    <p class="gal-note">Fotografías de estudiantes participantes, usadas con autorización de sus padres de familia conforme al programa de patrocinio educativo de FUNDASPED.</p>
+  </div>
+</section>
+
+<!-- ============================== CERTIFICACIÓN ============================ -->
+<section class="sec sec-dark cert" id="certificacion">
+  <div class="wrap cert-grid">
+    <div>
+      <div class="sec-head">
+        <p class="eyebrow eyebrow-gold"><span class="folio">06</span> Certificación</p>
+        <span class="rule" aria-hidden="true"></span>
+      </div>
+      <h2 class="sec-title reveal">Cada participante recibe una certificación.</h2>
+      <p class="cert-lead reveal" style="--d:.08s">Al finalizar las 15 horas, el estudiante recibe su certificado como <strong>Lector Experto en Técnicas de Lectura Rápida</strong>: un respaldo con proyección laboral, útil tanto en el camino académico como en procesos de selección.</p>
+      <button type="button" class="btn btn-gold reveal" style="--d:.14s" data-full="assets/img/certificado-640.webp" data-cap="Certificado emitido por FUNDASPED. El nombre del participante se reemplazó por un marcador genérico.">Ver certificación</button>
+    </div>
+
+    <figure class="cert-fig reveal" style="--d:.1s">
+      <img src="assets/img/certificado-480.webp" srcset="assets/img/certificado-480.webp 480w, assets/img/certificado-640.webp 640w" sizes="(max-width: 900px) 80vw, 420px" width="640" height="895" loading="lazy" decoding="async" alt="Certificado real emitido por FUNDASPED por el curso de Técnicas de Lectura Rápida, Comprensión y Retención.">
+      <figcaption>Certificado real emitido por FUNDASPED. El nombre del participante se reemplazó por un marcador genérico.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================================ PROPUESTAS ============================= -->
+<section class="sec sec-light propuestas" id="propuestas">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><span class="folio">07</span> Propuestas para instituciones</p>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+    <h2 class="sec-title reveal">Una propuesta para cada necesidad.</h2>
+
+    <div class="props">
+      <article class="prop reveal">
+        <p class="prop-n">01</p>
+        <h3 class="prop-t">Mil Lectores Expertos</h3>
+        <p class="prop-w"><span>Para</span> estudiantes de grado 11°</p>
+        <p class="prop-d">Preparación para las becas universitarias del Estado.</p>
+        <button type="button" class="prop-cta" data-prop="1" aria-label="Conocer la propuesta Mil Lectores Expertos">Quiero conocer esta propuesta</button>
+      </article>
+
+      <article class="prop reveal" style="--d:.08s">
+        <p class="prop-n">02</p>
+        <h3 class="prop-t">Talleres de diagnóstico en competencia lectora</h3>
+        <p class="prop-w"><span>Para</span> grados 3°, 5°, 9° y 11°</p>
+        <p class="prop-d">Identificamos las dificultades de comprensión lectora para diseñar estrategias de mejoramiento.</p>
+        <button type="button" class="prop-cta" data-prop="2" aria-label="Conocer la propuesta Talleres de diagnóstico en competencia lectora">Quiero conocer esta propuesta</button>
+      </article>
+
+      <article class="prop reveal" style="--d:.16s">
+        <p class="prop-n">03</p>
+        <h3 class="prop-t">Promoción anticipada</h3>
+        <p class="prop-w"><span>Para</span> estudiantes no promovidos</p>
+        <p class="prop-d">Alcanzar los resultados necesarios para ser promovidos en el primer periodo académico.</p>
+        <button type="button" class="prop-cta" data-prop="3" aria-label="Conocer la propuesta Promoción anticipada">Quiero conocer esta propuesta</button>
+      </article>
+
+      <article class="prop reveal" style="--d:.24s">
+        <p class="prop-n">04</p>
+        <h3 class="prop-t">Textos «El arte de leer»</h3>
+        <p class="prop-w"><span>Para</span> grado cero o preescolar y grado primero</p>
+        <p class="prop-d">Material de lectura para acompañar los grados iniciales.</p>
+        <button type="button" class="prop-cta" data-prop="4" aria-label="Conocer la propuesta Textos El arte de leer">Quiero conocer esta propuesta</button>
+      </article>
+    </div>
+
+    <p class="props-foot reveal"><strong>¿Cuál se ajusta mejor a su institución?</strong> Conversemos en el comité operativo de rectores o en la junta municipal de educación: ajustamos cobertura y grados según las necesidades de cada establecimiento.</p>
+  </div>
+</section>
+
+<!-- ================================= RECTORES ============================== -->
+<section class="sec sec-dark rectores" id="rectores">
+  <div class="wrap rect-in">
+    <p class="eyebrow eyebrow-gold reveal">Una invitación</p>
+    <h2 class="rect-title reveal" style="--d:.06s">¿Quiere llevar el programa a su institución?</h2>
+    <p class="rect-p reveal" style="--d:.12s">Solicitamos un espacio en su comité operativo de rectores o en la junta municipal de educación para presentar la propuesta.</p>
+    <div class="rect-cta reveal" style="--d:.18s">
+      <a class="btn btn-gold" href="#contacto">Coordinar una reunión</a>
+      <a class="btn btn-ghost" href="https://wa.me/573207584383?text=Hola%20FUNDASPED%2C%20soy%20rector%2Fa%20y%20quisiera%20coordinar%20una%20reuni%C3%B3n%20para%20conocer%20el%20programa%20de%20T%C3%A9cnicas%20de%20Lectura%20R%C3%A1pida." target="_blank" rel="noopener">Hablar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================= DONACIONES ============================ -->
+<section class="sec sec-light donar" id="donar">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><span class="folio">08</span> Donaciones</p>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+
+    <div class="donar-grid">
+      <div class="reveal">
+        <h2 class="sec-title">Su aporte sostiene nuestro trabajo por la lectura.</h2>
+        <p class="sec-lead">FUNDASPED es una entidad sin ánimo de lucro. Cada donación ayuda a llegar a instituciones que no siempre cuentan con los recursos para acceder al programa completo.</p>
+        <div class="donar-cta">
+          <a class="btn btn-gold" href="https://wa.me/573207584383?text=Hola%20FUNDASPED%2C%20quiero%20hacer%20una%20donaci%C3%B3n%20para%20apoyar%20el%20programa%20de%20lectura." target="_blank" rel="noopener">Quiero donar</a>
+          <button type="button" class="btn btn-line" data-modal="donar">Conocer cómo donar</button>
+        </div>
+      </div>
+
+      <ul class="donar-list reveal" style="--d:.1s">
+        <li><span>01</span> Talleres de diagnóstico en competencia lectora</li>
+        <li><span>02</span> Capacitación gratuita a docentes</li>
+        <li><span>03</span> Materiales de lectura para los grados iniciales</li>
+        <li><span>04</span> Becas para estudiantes del programa</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CARTA DE AGRADECIMIENTO ==================== -->
+<section class="sec sec-light carta" id="carta">
+  <div class="wrap">
+    <div class="carta-plate reveal">
+      <p class="eyebrow">Carta de agradecimiento</p>
+      <h2 class="carta-t">Gracias a quienes han creído en este proyecto.</h2>
+      <p>A las instituciones educativas, secretarías de educación, docentes, padres de familia y aliados que durante estos 30 años han creído en este programa: gracias por abrirnos las puertas de sus aulas y comités, y por permitirnos acompañar a sus estudiantes en el camino hacia una lectura más crítica y consciente.</p>
+      <p>Cada certificado entregado, cada taller realizado y cada docente capacitado es también su logro. Seguimos comprometidos con la calidad educativa de nuestros municipios, y esperamos seguir contando con su confianza y su apoyo.</p>
+      <p class="carta-firma">Álvaro Antonio Tamayo Estrada<span>Gerente · FUNDASPED</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================== CONTACTO ============================= -->
+<section class="sec sec-dark contacto" id="contacto">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow eyebrow-gold"><span class="folio">09</span> Contacto</p>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+
+    <div class="cont-grid">
+      <div class="cont-info reveal">
+        <h2 class="sec-title">Conversemos sobre su institución.</h2>
+        <dl class="cont-dl">
+          <div>
+            <dt>Gerente</dt>
+            <dd>Álvaro Antonio Tamayo Estrada</dd>
+          </div>
+          <div>
+            <dt>WhatsApp / Celular</dt>
+            <dd><a href="https://wa.me/573207584383?text=Hola%20FUNDASPED%2C%20estoy%20interesado%20en%20conocer%20el%20programa%20de%20T%C3%A9cnicas%20de%20Lectura%20R%C3%A1pida%2C%20Comprensi%C3%B3n%20y%20Retenci%C3%B3n." target="_blank" rel="noopener">320 758 4383</a></dd>
+          </div>
+          <div>
+            <dt>Correos</dt>
+            <dd><a href="mailto:aspededucacion@gmail.com">aspededucacion@gmail.com</a><br><a href="mailto:lecturap16@gmail.com">lecturap16@gmail.com</a></dd>
+          </div>
+          <div>
+            <dt>Facebook</dt>
+            <dd>Asesorías Pedagógicas Asped</dd>
+          </div>
+          <div>
+            <dt>Ubicación</dt>
+            <dd>Medellín · Antioquia · Colombia</dd>
+          </div>
+        </dl>
+      </div>
+
+      <form class="form reveal" id="form" style="--d:.1s" novalidate>
+        <div class="f-row">
+          <div class="f">
+            <label for="f-nombre">Nombre <span aria-hidden="true">*</span></label>
+            <input id="f-nombre" name="nombre" type="text" required autocomplete="name">
+          </div>
+          <div class="f">
+            <label for="f-inst">Institución <span aria-hidden="true">*</span></label>
+            <input id="f-inst" name="institucion" type="text" required autocomplete="organization">
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f">
+            <label for="f-cargo">Cargo</label>
+            <input id="f-cargo" name="cargo" type="text" autocomplete="organization-title">
+          </div>
+          <div class="f">
+            <label for="f-mun">Municipio</label>
+            <input id="f-mun" name="municipio" type="text" autocomplete="address-level2">
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f">
+            <label for="f-mail">Correo</label>
+            <input id="f-mail" name="correo" type="email" autocomplete="email">
+          </div>
+          <div class="f">
+            <label for="f-tel">Teléfono <span aria-hidden="true">*</span></label>
+            <input id="f-tel" name="telefono" type="tel" required autocomplete="tel">
+          </div>
+        </div>
+        <div class="f">
+          <label for="f-int">Interés</label>
+          <select id="f-int" name="interes">
+            <option>Programa de lectura</option>
+            <option>Propuesta institucional</option>
+            <option>Diagnóstico</option>
+            <option>Mil Lectores Expertos</option>
+            <option>Donación</option>
+            <option>Otro</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-gold btn-full">Solicitar información</button>
+        <p class="f-note" id="f-note">Al enviar se abre WhatsApp con su solicitud lista. También puede <a href="mailto:aspededucacion@gmail.com?subject=Solicitud%20de%20informaci%C3%B3n%20-%20FUNDASPED">escribirnos por correo</a>.</p>
+        <p class="f-error" id="f-error" role="alert" hidden></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================================== FOOTER =============================== -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <img src="assets/img/logo-navy-72.webp" srcset="assets/img/logo-navy-72.webp 72w, assets/img/logo-navy-144.webp 144w" sizes="46px" width="46" height="41" loading="lazy" alt="Logotipo de FUNDASPED">
+        <div>
+          <p class="ft-name">FUNDASPED</p>
+          <p class="ft-sub">Fundación Educativa Asesorías Pedagógicas</p>
+          <p class="ft-sub">Entidad sin ánimo de lucro · NIT 98.492.255-8</p>
+        </div>
+      </div>
+
+      <nav class="ft-nav" aria-label="Navegación del pie de página">
+        <p class="ft-h">Secciones</p>
+        <ul>
+          <li><a href="#fundasped">FUNDASPED</a></li>
+          <li><a href="#programa">El programa</a></li>
+          <li><a href="#propuestas">Propuestas</a></li>
+          <li><a href="#certificacion">Certificación</a></li>
+          <li><a href="#donar">Donar</a></li>
+        </ul>
+      </nav>
+
+      <div class="ft-cont">
+        <p class="ft-h">Contacto</p>
+        <ul>
+          <li><a href="https://wa.me/573207584383?text=Hola%20FUNDASPED%2C%20estoy%20interesado%20en%20conocer%20el%20programa%20de%20T%C3%A9cnicas%20de%20Lectura%20R%C3%A1pida%2C%20Comprensi%C3%B3n%20y%20Retenci%C3%B3n." target="_blank" rel="noopener">WhatsApp 320 758 4383</a></li>
+          <li><a href="mailto:aspededucacion@gmail.com">aspededucacion@gmail.com</a></li>
+          <li><a href="mailto:lecturap16@gmail.com">lecturap16@gmail.com</a></li>
+          <li>Facebook: Asesorías Pedagógicas Asped</li>
+          <li>Medellín · Antioquia</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="ft-legal">© <span id="year">2026</span> FUNDASPED · Fundación Educativa Asesorías Pedagógicas · Programa de Técnicas de Lectura Rápida, Comprensión y Retención.</p>
+  </div>
+</footer>
+
+<!-- =============================== WHATSAPP FLOTANTE ======================= -->
+<a class="wa-float" href="https://wa.me/573207584383?text=Hola%20FUNDASPED%2C%20estoy%20interesado%20en%20conocer%20el%20programa%20de%20T%C3%A9cnicas%20de%20Lectura%20R%C3%A1pida%2C%20Comprensi%C3%B3n%20y%20Retenci%C3%B3n." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a FUNDASPED">
+  <span class="wa-tip" aria-hidden="true">Escríbanos por WhatsApp</span>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2A9.9 9.9 0 0 0 2.1 11.9c0 1.75.46 3.46 1.34 4.97L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01a9.9 9.9 0 0 0 9.94-9.9A9.9 9.9 0 0 0 12.04 2Zm5.8 14.06c-.24.68-1.42 1.31-1.96 1.36-.5.05-.98.23-3.3-.69-2.78-1.1-4.54-3.94-4.68-4.13-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.28.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.23.55.78 1.9.85 2.04.07.14.11.3.02.48-.09.19-.14.3-.27.47-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.28.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.07.11.07.65-.17 1.33Z"/></svg>
+</a>
+
+<!-- ================================== DIÁLOGOS ============================= -->
+<div class="ov" id="ov" hidden>
+  <div class="ov-bg" data-close></div>
+
+  <div class="ov-box" id="ov-box" role="dialog" aria-modal="true" aria-label="Información" tabindex="-1">
+    <button type="button" class="ov-x" data-close aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div class="ov-body" id="ov-body"></div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "#fundasped",
+      "name": "FUNDASPED",
+      "alternateName": "Fundación Educativa Asesorías Pedagógicas",
+      "foundingDate": "1994",
+      "description": "Entidad sin ánimo de lucro que acompaña a instituciones educativas de Antioquia en el mejoramiento de la competencia lectora a través del programa de Técnicas de Lectura Rápida, Comprensión y Retención.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Medellín",
+        "addressRegion": "Antioquia",
+        "addressCountry": "CO"
+      },
+      "areaServed": "Antioquia, Colombia",
+      "email": "aspededucacion@gmail.com",
+      "telephone": "+573207584383",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Información institucional",
+        "telephone": "+573207584383",
+        "email": "aspededucacion@gmail.com",
+        "availableLanguage": "es"
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Técnicas de Lectura Rápida, Comprensión y Retención",
+      "description": "Programa de 20 técnicas organizadas en 3 módulos para fortalecer la competencia lectora de estudiantes de instituciones educativas. Al finalizar, cada participante recibe un certificado como Lector Experto en Técnicas de Lectura Rápida.",
+      "inLanguage": "es",
+      "provider": { "@id": "#fundasped" },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "onsite",
+        "courseWorkload": "PT15H"
+      }
+    }
+  ]
+}
+</script>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

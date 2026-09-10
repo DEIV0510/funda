@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "fundasped",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["_tools/dev-server.js"],
+      "port": 5333
+    }
+  ]
+}
