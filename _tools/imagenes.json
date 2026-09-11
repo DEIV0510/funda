@@ -9,6 +9,15 @@
     ],
     "alto": 480
   },
+  "hero-sec": {
+    "origen": "foto-05.jpg",
+    "original": "640x480",
+    "anchos": [
+      360,
+      260
+    ],
+    "alto": 480
+  },
   "girardota": {
     "origen": "img-002-002.png",
     "original": "546x410",

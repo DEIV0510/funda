@@ -9,6 +9,10 @@
   var root = document.documentElement;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Este archivo arrancó: cancelamos la red de seguridad que mostraría todas
+  // las secciones de golpe y dejaría sin efecto el reveal al hacer scroll.
+  clearTimeout(window.__fundaspedFallback);
+
   /* ------------------------------- Utilidades ---------------------------- */
   var WA_NUM = '573207584383';
   var WA_BASE = 'Hola FUNDASPED, ';
@@ -90,29 +94,15 @@
 
   /* ------------------------- Reveal y cifras animadas --------------------- */
   (function reveal() {
-    var items = $$('.reveal');
-    var heads = $$('.sec-head');
+    // Un barrido propio en vez de IntersectionObserver: con scroll rápido o por
+    // inercia el observer se salta entradas y deja secciones en opacity 0.
+    var pendientes = $$('.reveal').concat($$('.sec-head'));
 
-    if (!('IntersectionObserver' in window)) {
-      items.forEach(function (el) { el.classList.add('in'); });
-      heads.forEach(function (el) { el.classList.add('in-view'); });
-      contarTodo();
-      return;
+    function mostrar(el) {
+      el.classList.add(el.classList.contains('sec-head') ? 'in-view' : 'in');
+      var num = el.querySelector('[data-count]');
+      if (num) contar(num);
     }
-
-    var io = new IntersectionObserver(function (entradas) {
-      entradas.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        en.target.classList.add(en.target.classList.contains('sec-head') ? 'in-view' : 'in');
-        var num = en.target.querySelector('[data-count]');
-        if (num) contar(num);
-        io.unobserve(en.target);
-      });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
-
-    items.concat(heads).forEach(function (el) { io.observe(el); });
-
-    function contarTodo() { $$('[data-count]').forEach(contar); }
 
     function contar(el) {
       if (el.dataset.done) return;
@@ -124,13 +114,40 @@
       function paso(t) {
         if (t0 === null) t0 = t;
         var p = Math.min(1, (t - t0) / dur);
-        var e = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(fin * e) + suf;
+        el.textContent = Math.round(fin * (1 - Math.pow(1 - p, 3))) + suf;
         if (p < 1) window.requestAnimationFrame(paso);
       }
       el.textContent = '0' + suf;
       window.requestAnimationFrame(paso);
     }
+
+    var pendiente = false;
+    function barrer() {
+      pendiente = false;
+      var limite = (window.innerHeight || 0) * 0.92;
+      for (var i = pendientes.length - 1; i >= 0; i--) {
+        if (pendientes[i].getBoundingClientRect().top < limite) {
+          mostrar(pendientes[i]);
+          pendientes.splice(i, 1);
+        }
+      }
+      if (!pendientes.length) {
+        window.removeEventListener('scroll', pedir);
+        window.removeEventListener('resize', pedir);
+      }
+    }
+    function pedir() {
+      if (pendiente) return;
+      pendiente = true;
+      window.requestAnimationFrame(barrer);
+    }
+
+    window.addEventListener('scroll', pedir, { passive: true });
+    window.addEventListener('resize', pedir);
+    barrer();
+    // Tras cargar las fuentes y las imágenes las alturas cambian: repasamos.
+    window.addEventListener('load', pedir);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(pedir);
   })();
 
   /* ------------------------------ Scrollspy ------------------------------ */
@@ -391,6 +408,45 @@
       window.open(waLink(lineas.join(' ')), '_blank', 'noopener');
       form.reset();
     });
+  })();
+
+  /* ------------------------ Paralaje muy leve en fotos ------------------- */
+  (function parallax() {
+    if (reduce || !('IntersectionObserver' in window)) return;
+    var els = $('[data-par]');
+    if (!els.length) return;
+
+    var visibles = [];
+    var pendiente = false;
+
+    var io = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (en) {
+        var i = visibles.indexOf(en.target);
+        if (en.isIntersecting && i < 0) visibles.push(en.target);
+        else if (!en.isIntersecting && i >= 0) visibles.splice(i, 1);
+      });
+      colocar();
+    }, { rootMargin: '150px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+
+    function colocar() {
+      pendiente = false;
+      var vh = window.innerHeight || 1;
+      visibles.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        var p = (r.top + r.height / 2 - vh / 2) / vh;        // -1 arriba, +1 abajo
+        var d = p * parseFloat(el.dataset.par || 0) * 210;
+        el.style.setProperty('--par', d.toFixed(1) + 'px');
+      });
+    }
+
+    window.addEventListener('scroll', function () {
+      if (pendiente) return;
+      pendiente = true;
+      window.requestAnimationFrame(colocar);
+    }, { passive: true });
+    window.addEventListener('resize', colocar);
+    colocar();
   })();
 
   /* --------------------------------- Varios ------------------------------ */

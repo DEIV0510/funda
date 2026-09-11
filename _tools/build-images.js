@@ -11,6 +11,8 @@ const OUT = 'assets/img';
 
 const PHOTOS = [
   { src: '_raw/jimdo/foto-06.jpg',        out: 'hero',        widths: [640, 480, 360] },
+  // Recorte vertical para la foto que se superpone en el hero.
+  { src: '_raw/jimdo/foto-05.jpg',        out: 'hero-sec',    widths: [360, 260], crop: { width: 360, height: 480, position: 'north' } },
   { src: '_raw/brochure/img-002-002.png', out: 'girardota',   widths: [546, 400] },
   { src: '_raw/brochure/img-002-003.png', out: 'encenillos',  widths: [458, 400] },
   { src: '_raw/jimdo/banner-01.jpg',      out: 'taller-01',   widths: [960, 640, 420] },
@@ -61,10 +63,16 @@ const PHOTOS = [
     const meta = await sharp(p.src).metadata();
     const widths = [...new Set(p.widths.map(w => Math.min(w, meta.width)))].sort((a, b) => b - a);
     for (const w of widths) {
-      await sharp(p.src).resize({ width: w, withoutEnlargement: true })
-        .webp({ quality: 82 }).toFile(`${OUT}/${p.out}-${w}.webp`);
+      const pipe = sharp(p.src);
+      if (p.crop) {
+        const h = Math.round(w * p.crop.height / p.crop.width);
+        pipe.resize({ width: w, height: h, fit: 'cover', position: p.crop.position, withoutEnlargement: true });
+      } else {
+        pipe.resize({ width: w, withoutEnlargement: true });
+      }
+      await pipe.webp({ quality: 82 }).toFile(`${OUT}/${p.out}-${w}.webp`);
     }
-    report[p.out] = { origen: path.basename(p.src), original: `${meta.width}x${meta.height}`, anchos: widths, alto: Math.round(widths[0] * meta.height / meta.width) };
+    report[p.out] = { origen: path.basename(p.src), original: `${meta.width}x${meta.height}`, anchos: widths, alto: p.crop ? Math.round(widths[0] * p.crop.height / p.crop.width) : Math.round(widths[0] * meta.height / meta.width) };
   }
 
   fs.writeFileSync('_tools/imagenes.json', JSON.stringify(report, null, 2));

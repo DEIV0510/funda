@@ -94,7 +94,7 @@ ul,ol{padding:0;list-style:none}
 /* --------------------------- 3. Pantalla de carga ----------------------- */
 #loader{transition:opacity .45s ease,visibility .45s ease}
 #loader.off{opacity:0;visibility:hidden;pointer-events:none}
-.fallback #loader{display:none!important}
+.fallback #loader,.loader-off #loader{display:none!important}
 .loader-mark{width:72px;height:65px;object-fit:contain;animation:mark-in .7s cubic-bezier(.2,.7,.2,1) both}
 .loader-name{
   font-family:var(--sans);font-size:.95rem;font-weight:600;letter-spacing:.36em;
@@ -229,69 +229,161 @@ ul,ol{padding:0;list-style:none}
 
 /* --------------------------------- 8. Hero ------------------------------ */
 .hero{
-  background:var(--navy-800);color:#fff;position:relative;overflow:clip;
-  padding-top:calc(var(--hdr) + clamp(3rem,7vw,5.5rem));
-  padding-bottom:0;
+  position:relative;isolation:isolate;overflow:clip;
+  background:var(--navy-800);color:#fff;
+  padding-top:calc(var(--hdr) + clamp(2.4rem,5.5vw,4.5rem));
+  --media-w:min(600px, 40vw);
+  --sec-w:clamp(118px, 25vw, 170px);   /* ancho de la foto superpuesta */
 }
-/* Trama de renglones: guiño editorial a la página impresa, casi imperceptible */
-.hero::before{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:repeating-linear-gradient(to bottom,rgba(255,255,255,.028) 0 1px,transparent 1px 34px);
-}
-.hero > *{position:relative}
 
-.hero-grid{display:grid;gap:clamp(2.6rem,5vw,4.5rem);align-items:center}
-@media (min-width:980px){ .hero-grid{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr)} }
+/* Columnas finas de retícula: estructura de página impresa, casi imperceptible. */
+.hero-cols{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(to right,rgba(227,181,74,.075) 0 1px,transparent 1px);
+  background-size:calc(100% / 8) 100%;
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 16%,#000 68%,transparent);
+  mask-image:linear-gradient(to bottom,transparent,#000 16%,#000 68%,transparent);
+}
+.hero-inner,.hero-rail,.hero-plinth{position:relative;z-index:1}
+.hero-media{z-index:1}
+
+/* Cintillo vertical al margen, sólo cuando hay aire de sobra. */
+.hero-rail{
+  display:none;margin:0;
+  position:absolute;left:1.25rem;top:calc(var(--hdr) + 3.5rem);z-index:2;
+  writing-mode:vertical-rl;transform:rotate(180deg);
+  font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:#5f6f8e;white-space:nowrap;
+}
+.hero-rail span{color:var(--gold);opacity:.85}
+@media (min-width:1380px){ .hero-rail{display:block} }
+
+.hero-inner{display:grid}
+.hero-copy{min-width:0}
+
+/* Entrada escalonada del bloque de texto. */
+.js .hero-l{opacity:0}
+.ready .hero-l{animation:hero-up .95s cubic-bezier(.16,.84,.24,1) both}
+.ready .hero-l:nth-child(1){animation-delay:.04s}
+.ready .hero-l:nth-child(2){animation-delay:.12s}
+.ready .hero-l:nth-child(3){animation-delay:.22s}
+.ready .hero-l:nth-child(4){animation-delay:.3s}
+.ready .hero-l:nth-child(5){animation-delay:.38s}
+.ready .hero-l:nth-child(6){animation-delay:.46s}
+.fallback .hero-l{opacity:1!important;animation:none!important}
+@keyframes hero-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 
 .hero-title{
   font-family:var(--serif);font-weight:300;font-size:var(--t-display);
-  line-height:.97;letter-spacing:-.028em;margin:1.4rem 0 0;color:#fff;text-wrap:balance;
+  line-height:.97;letter-spacing:-.028em;margin:1.3rem 0 0;color:#fff;text-wrap:balance;
 }
 .mark{position:relative;font-style:italic;font-weight:400;color:var(--gold-lt);white-space:nowrap}
 .mark::after{
   content:"";position:absolute;left:-.03em;right:-.03em;bottom:-.02em;height:.085em;
   background:var(--gold);opacity:.9;
   transform:scaleX(0);transform-origin:left;
-  transition:transform 1.1s cubic-bezier(.2,.7,.2,1) .5s;
+  transition:transform 1.1s cubic-bezier(.2,.7,.2,1) .75s;
 }
 .ready .mark::after,.fallback .mark::after{transform:scaleX(1)}
 
-.hero-sub{font-family:var(--serif);font-size:clamp(1.1rem,1.6vw,1.4rem);color:#dce3f0;margin-top:1.5rem;max-width:34ch;line-height:1.45}
-.hero-note{display:flex;align-items:center;gap:.85rem;margin-top:1.5rem;font-size:.88rem;color:#93a1ba;letter-spacing:.01em}
+.hero-sub{font-family:var(--serif);font-size:clamp(1.1rem,1.6vw,1.4rem);color:#dce3f0;margin-top:1.4rem;max-width:32ch;line-height:1.45}
+.hero-note{display:flex;align-items:center;gap:.85rem;margin-top:1.4rem;font-size:.88rem;color:#93a1ba}
 .rule-mini{width:34px;height:1px;background:var(--gold);flex:none}
-.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.3rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.2rem}
 .hero-wa{
-  display:inline-flex;align-items:center;gap:.6rem;margin-top:1.5rem;
+  display:inline-flex;align-items:center;gap:.6rem;margin-top:1.4rem;
   color:#9fb0cc;text-decoration:none;font-size:.87rem;transition:color .22s ease;
 }
 .hero-wa svg{width:17px;height:17px;fill:var(--gold-lt);flex:none}
 .hero-wa b{color:#dfe6f2;font-weight:500;letter-spacing:.03em}
 .hero-wa:hover{color:#fff}
 
-.hero-plate{position:relative;margin:0;max-width:560px;justify-self:end;width:100%}
-.hero-plate::before{
-  content:"";position:absolute;inset:-14px -14px 34px 14px;border:1px solid var(--line-dark);pointer-events:none;
-}
-.hero-plate img{width:100%;height:auto;filter:saturate(.85) contrast(1.04);position:relative}
-.hero-plate figcaption{
-  margin-top:1rem;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;color:#7f8ea9;
-}
-@media (max-width:979px){ .hero-plate{justify-self:stretch;max-width:none} .hero-plate::before{inset:-10px -10px 30px 10px} }
+/* ---- Fotografías: se salen de la caja y se superponen ---- */
+.hero-media{position:relative;margin-top:clamp(2.4rem,5vw,3.5rem);width:min(100% - 2rem,1240px);margin-inline:auto}
+@media (min-width:700px){ .hero-media{width:min(100% - 4rem,1240px)} }
 
-/* Cifras de autoridad */
-.figures{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  margin-top:clamp(3.5rem,7vw,6rem);border-top:1px solid var(--line-dark);
+.hero-plate{position:relative;margin:0;transform:translate3d(0,var(--par,0),0)}
+.hero-plate::before{
+  content:"";position:absolute;inset:-1rem -1rem 2.6rem 1rem;
+  border:1px solid var(--line-dark);pointer-events:none;
 }
-.fig{padding:clamp(1.8rem,3vw,2.6rem) 0 clamp(2.6rem,5vw,4rem);padding-inline-start:clamp(1rem,2vw,1.8rem);border-inline-start:1px solid var(--line-dark)}
+.hero-plate img{width:100%;height:auto;filter:saturate(.86) contrast(1.05)}
+/* Velo que funde el borde izquierdo de la foto con el fondo navy. */
+.hero-plate::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(99deg,rgba(14,27,51,1) 0%,rgba(14,27,51,.6) 13%,rgba(14,27,51,0) 44%),
+    linear-gradient(to top,rgba(14,27,51,.6) 0%,rgba(14,27,51,0) 26%);
+}
+.hero-plate figcaption{
+  margin-top:1.05rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#7f8ea9;
+  text-align:right;padding-inline-start:calc(var(--sec-w) + 1.2rem);
+}
+.ready .hero-plate img,.ready .hero-plate::after{animation:plate-in 1.3s cubic-bezier(.16,.84,.24,1) both .12s}
+@keyframes plate-in{
+  from{clip-path:inset(0 0 100% 0);transform:scale(1.06)}
+  to{clip-path:inset(0 0 0 0);transform:none}
+}
+
+.hero-plate-2{
+  position:absolute;z-index:2;margin:0;overflow:hidden;
+  left:-.6rem;bottom:-2.4rem;width:var(--sec-w);
+  border:5px solid var(--navy-800);
+  box-shadow:0 24px 55px -26px rgba(0,0,0,.85);
+  transform:translate3d(0,var(--par,0),0);
+}
+.hero-plate-2 img{width:100%;height:auto;filter:saturate(.92) brightness(1.09) contrast(1.02)}
+.ready .hero-plate-2{animation:plate2-in 1s cubic-bezier(.16,.84,.24,1) both .75s}
+@keyframes plate2-in{from{opacity:0;translate:0 26px}to{opacity:1;translate:0 0}}
+
+@media (min-width:980px){
+  .hero-inner{
+    grid-template-columns:minmax(0,1fr) var(--media-w);
+    gap:clamp(2.5rem,4vw,4.5rem);
+    min-height:calc(var(--media-w) * .75 + 3rem);
+  }
+  .hero{--sec-w:clamp(150px, 13vw, 196px)}
+  .hero-copy{grid-column:1;align-self:center;padding-bottom:clamp(1rem,3vw,2.5rem)}
+  .hero-media{
+    position:absolute;margin:0;z-index:1;
+    width:var(--media-w);
+    right:max(0px, calc((100vw - 1240px) / 2 - 5rem));
+    top:calc(var(--hdr) + clamp(3rem,6vw,5rem));
+  }
+  .hero-plate-2{left:-2.4rem;bottom:-3rem}
+}
+
+/* ---- Zócalo de cifras ---- */
+.hero-plinth{
+  margin-top:clamp(3.2rem,6vw,5.5rem);
+  background:var(--navy-900);border-top:1px solid var(--line-dark);
+}
+.figures{display:grid;grid-template-columns:repeat(4,1fr)}
+.fig{
+  position:relative;
+  padding:clamp(1.9rem,3.2vw,2.8rem) 0;
+  padding-inline-start:clamp(1rem,2vw,1.8rem);
+  border-inline-start:1px solid rgba(255,255,255,.07);
+}
 .fig:first-child{border-inline-start:0;padding-inline-start:0}
-.fig-n{font-family:var(--serif);font-weight:300;font-size:clamp(2.7rem,5.2vw,4.4rem);line-height:1;color:var(--gold-lt);letter-spacing:-.03em}
-.fig-l{margin-top:.7rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#8896b0;max-width:14ch}
+/* Filete dorado que se dibuja sobre el borde del zócalo, columna a columna. */
+.fig::before{
+  content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .9s cubic-bezier(.2,.7,.2,1) var(--d,0s);
+}
+.fig.in::before,.fallback .fig::before{transform:scaleX(1)}
+.fig-n{
+  font-family:var(--serif);font-weight:300;font-size:clamp(2.9rem,5.4vw,4.6rem);
+  line-height:1;color:var(--gold-lt);letter-spacing:-.03em;
+}
+.fig-l{margin-top:.7rem;font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:#8896b0;max-width:14ch}
+
 @media (max-width:700px){
   .figures{grid-template-columns:repeat(2,1fr)}
   .fig:nth-child(3){border-inline-start:0;padding-inline-start:0}
-  .fig:nth-child(-n+2){padding-bottom:2rem}
-  .fig:nth-child(n+3){border-top:1px solid var(--line-dark);padding-top:2rem}
+  .fig:nth-child(-n+2){padding-bottom:1.9rem}
+  .fig:nth-child(n+3){border-top:1px solid rgba(255,255,255,.07);padding-top:1.9rem}
+  .fig:nth-child(n+3)::before{display:none}
 }
 
 /* -------------------------------- 9. El reto ---------------------------- */
@@ -626,6 +718,35 @@ ul,ol{padding:0;list-style:none}
 .ov-fig img{width:100%;height:auto;background:#fff}
 .ov-fig figcaption{margin-top:.9rem;font-size:.8rem;color:#c3cbdb;text-align:center;line-height:1.5}
 
+/* --------------------- 22.b Acentos de interacción ---------------------- */
+/* Barrido dorado al recorrer los módulos. */
+.mod{position:relative}
+.mod::before{
+  content:"";position:absolute;inset:0 auto 0 0;width:0;pointer-events:none;
+  background:linear-gradient(to right,rgba(227,181,74,.09),rgba(227,181,74,0));
+  transition:width .6s cubic-bezier(.2,.7,.2,1);
+}
+.mod[data-open]::before{width:100%}
+.mod > *{position:relative}
+
+/* Filete que crece en el borde superior de cada propuesta. */
+.prop::after{
+  content:"";position:absolute;left:-1px;top:-1px;width:0;height:2px;background:var(--gold);
+  transition:width .55s cubic-bezier(.2,.7,.2,1);
+}
+.prop:hover::after,.prop:focus-within::after{width:42%}
+
+/* Las fotografías se descubren de abajo hacia arriba al entrar en pantalla. */
+.js .reveal-clip img{
+  clip-path:inset(0 0 100% 0);transform:scale(1.05);
+  transition:clip-path 1.15s cubic-bezier(.16,.84,.24,1) var(--d,0s),transform 1.5s cubic-bezier(.16,.84,.24,1) var(--d,0s);
+}
+.js .reveal-clip.in img{clip-path:inset(0 0 0 0);transform:none}
+.fallback .reveal-clip img{clip-path:none!important;transform:none!important}
+
+/* Desplazamiento leve por paralaje (lo calcula main.js). */
+[data-par]{transform:translate3d(0,var(--par,0),0);will-change:transform}
+
 /* ------------------------- 23. Reveal e interacción --------------------- */
 .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.2,.7,.2,1) var(--d,0s),transform .7s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
 .js .reveal.in{opacity:1;transform:none}
@@ -640,8 +761,11 @@ body.no-scroll{overflow:hidden}
     transition-duration:.001ms!important;scroll-behavior:auto!important;
   }
   .js .reveal{opacity:1;transform:none}
+  .js .reveal-clip img{clip-path:none;transform:none}
   .mark::after{transform:scaleX(1)}
   .rule{transform:scaleX(1)}
+  .fig::before{transform:scaleX(1)}
+  [data-par]{transform:none!important}
   .wa-float::before{display:none}
 }
 
